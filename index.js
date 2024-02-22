@@ -1,3 +1,7 @@
+// Documentation
+// https://firebase.google.com/docs/database/web/read-and-write
+
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
 import { getDatabase, ref, child, get, onValue } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
@@ -35,18 +39,20 @@ onValue(messages, (snapshot) => {
     // Empty the ul emelemt
     ul.replaceChildren(); 
 
+    // Loop through messages
     snapshot.forEach((childSnapshot) => {
 
+        // Get key and children
         const childKey = childSnapshot.key;
         const childData = childSnapshot.val();
 
         console.log(childKey);
         console.log(childData);
 
+        // Add message to list
         const text = document.createTextNode(childData.message);
         const li = document.createElement('li');
         li.appendChild(text);
-
         ul.appendChild(li);
     
     });
