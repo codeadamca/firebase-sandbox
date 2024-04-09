@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Realtime Database Sample</title>
-
+    <title>Authentication Sample</title>
     <script type="module" src="authentication.js"></script>
   </head>
   <body>
-    <h1>Firebase Sandbox</h1>
-    <ul>
-      <li><a href="/">Realtime Database</a></li>
-      <li><a href="/authentication.html">Authentication</a></li>
-    </ul>
-    <h2>Authentication</h2>
-    <div id="login">
-      <button id="login_button">Signup with Google</button>
+    <h1>Authetication Sample</h1>
+
+    <button id="signInButton">Create Account / Sign In</button>
+    <button id="signOutButton">Sign Out</button>
+
+    <div id="message">
+      <p>
+        You have signed in as <span id="userName"></span> with the email address
+        <span id="userEmail"></span>
+      </p>
     </div>
-    <div id="welcome">Wecome back...</div>
   </body>
 </html>
