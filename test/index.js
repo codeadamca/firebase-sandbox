@@ -1,61 +1,49 @@
-// Documentation
-// https://firebase.google.com/docs/database/web/read-and-write
-
 // Import the functions you need from the SDKs you need
-import {initializeApp} from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import {
   getDatabase,
   ref,
-  child,
-  get,
   onValue,
-} from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
-
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: "",
+  apiKey: "AIzaSyA4cRs_wUDWohD7VxBmM--iZG7_cEt7NO8",
+  authDomain: "testfirebase-f94e9.firebaseapp.com",
+  databaseURL: "https://testfirebase-f94e9-default-rtdb.firebaseio.com",
+  projectId: "testfirebase-f94e9",
+  storageBucket: "testfirebase-f94e9.appspot.com",
+  messagingSenderId: "739286521141",
+  appId: "1:739286521141:web:d146ab390e36e1349a287c",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Realtime Database and get a reference to the service
 const database = getDatabase();
 
-// Fetch messages
 const messages = ref(database, "/messages");
 
-// On data event
 onValue(
   messages,
   (snapshot) => {
-    // Create a reference to the ul element
-    const ul = document.getElementById("messages");
+    console.log(snapshot);
 
-    // Empty the ul emelemt
+    const ul = document.getElementById("messages");
     ul.replaceChildren();
 
-    // Loop through messages
     snapshot.forEach((childSnapshot) => {
-      // Get key and children
+      console.log(childSnapshot.key);
+      console.log(childSnapshot.val());
+
       const childKey = childSnapshot.key;
       const childData = childSnapshot.val();
 
-      console.log(childKey);
-      console.log(childData);
-
-      // Add message to list
       const text = document.createTextNode(childData.message);
       const li = document.createElement("li");
+
       li.appendChild(text);
       ul.appendChild(li);
     });

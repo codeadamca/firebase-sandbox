@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Realtime Database Sample</title>
 
-    <script type="module" src="index.js"></script>
+    <script type="module" src="authentication.js"></script>
   </head>
   <body>
     <h1>Firebase Sandbox</h1>
@@ -13,7 +13,16 @@
       <li><a href="/">Realtime Database</a></li>
       <li><a href="/authentication.html">Authentication</a></li>
     </ul>
-    <h2>Realtime Database</h2>
-    <ul id="messages"></ul>
+    <h2>Authentication</h2>
+
+    <button id="signInButton">Create Account / Sign In</button>
+    <button id="signOutButton">Sign Out</button>
+
+    <div id="message">
+      <p>
+        You have signed in as <span id="userName"></span> with the email
+        <span id="userEmail"></span>
+      </p>
+    </div>
   </body>
 </html>
