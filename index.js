@@ -8,7 +8,10 @@ import {
   ref,
   child,
   get,
+  push,
+  set,
   onValue,
+  serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -54,7 +57,9 @@ onValue(
       console.log(childData);
 
       // Add message to list
-      const text = document.createTextNode(childData.message);
+      const text = document.createTextNode(
+        childData.message + " ~ " + childData.name
+      );
       const li = document.createElement("li");
       li.appendChild(text);
       ul.appendChild(li);
@@ -64,3 +69,21 @@ onValue(
     onlyOnce: false,
   }
 );
+
+let add = document.getElementById("add");
+
+add.addEventListener("click", function (e) {
+  const name = document.getElementById("name");
+  const message = document.getElementById("message");
+
+  const messageListRef = ref(database, "messages");
+  const newMessageRef = push(messageListRef);
+
+  set(newMessageRef, {
+    name: name.value,
+    message: message.value,
+    createdAt: serverTimestamp(),
+  });
+
+  e.preventDefault();
+});
