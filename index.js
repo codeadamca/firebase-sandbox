@@ -76,8 +76,7 @@ add.addEventListener("click", function (e) {
   const name = document.getElementById("name");
   const message = document.getElementById("message");
 
-  const messageListRef = ref(database, "messages");
-  const newMessageRef = push(messageListRef);
+  const newMessageRef = push(messages);
 
   set(newMessageRef, {
     name: name.value,
