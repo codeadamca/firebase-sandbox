@@ -18,7 +18,7 @@ import {
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
+/*const firebaseConfig = {
   apiKey: "",
   authDomain: "",
   databaseURL: "",
@@ -26,6 +26,17 @@ const firebaseConfig = {
   storageBucket: "",
   messagingSenderId: "",
   appId: "",
+};*/
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyB769mBClawDDNEnJEal2RK1F8fVcLDj9I",
+  authDomain: "humber-projects-340818.firebaseapp.com",
+  databaseURL: "https://humber-projects-340818-default-rtdb.firebaseio.com",
+  projectId: "humber-projects-340818",
+  storageBucket: "humber-projects-340818.firebasestorage.app",
+  messagingSenderId: "859327946131",
+  appId: "1:859327946131:web:6eca22d077d4bc09ce9c66"
 };
 
 // Initialize Firebase
