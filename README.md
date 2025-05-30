@@ -8,7 +8,7 @@ A sandbox for messing around with Firebase.
 
 This project uses vanillia [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [Firebae](https://firebase.google.com/).
 
-<img src="https://console.codeadam.ca/api/image/javasc ript" width="60"> <img src="https://console.codeadam.ca/api/image/javascript" width="60">
+<img src="https://console.codeadam.ca/api/image/firebase" width="60"> <img src="https://console.codeadam.ca/api/image/javascript" width="60">
 
 ---
 
